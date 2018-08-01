@@ -1,0 +1,47 @@
+.col-eighth {
+    width: 12.5%;
+    background-color: #888888;
+}
+
+.col-seven-eighths {
+    width: 87.5%;
+    background-color: #F6F8F9;
+}
+
+.app {
+    height: 100vh;
+    padding: 0;
+}
+
+.left-top, .left-bottom {
+    background-color: #666666;
+    height: 80px;
+}
+
+.left-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 12.5%;
+}
+
+.top {
+    background-color: #0581BA;
+    height: 30px;
+    padding: 0 1%;
+}
+
+.header {
+    height: 80px;
+    border-bottom: 1px solid #E2E7EA;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.main {
+    width: 98%;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+}

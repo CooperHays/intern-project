@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-links.component.less']
 })
 export class NavLinksComponent implements OnInit {
+  stats = "Support Stats";
+  recognition = "Recognition";
 
   constructor() { }
 

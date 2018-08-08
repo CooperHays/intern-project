@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-link.component.less']
 })
 export class AuthLinkComponent implements OnInit {
+  user = "Michael Cooper";
 
+  logout = "Logout";
+  
   constructor() { }
 
   ngOnInit() {

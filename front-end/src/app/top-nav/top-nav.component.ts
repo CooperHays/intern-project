@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
+  username = "m.cooper";
+
   constructor() { }
 
   ngOnInit() {

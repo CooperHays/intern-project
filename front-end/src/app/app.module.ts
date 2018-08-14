@@ -8,6 +8,9 @@ import { AuthLinkComponent } from './auth-link/auth-link.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { HeaderComponent } from './header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { StatsComponent } from './stats/stats.component';
+import { RecognitionComponent } from './recognition/recognition.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { MainContentComponent } from './main-content/main-content.component';
     AuthLinkComponent,
     TopNavComponent,
     HeaderComponent,
-    MainContentComponent
+    MainContentComponent,
+    StatsComponent,
+    RecognitionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

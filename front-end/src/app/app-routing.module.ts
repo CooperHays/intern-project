@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'dashboard', component: MainContentComponent },
   { path: 'stats', component: StatsComponent },
   { path: 'recognition', component: RecognitionComponent }
-]
+];
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

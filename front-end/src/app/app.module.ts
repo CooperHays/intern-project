@@ -14,6 +14,8 @@ import { RecognitionComponent } from './recognition/recognition.component';
 import { LeftRecognitionComponent } from './left-recognition/left-recognition.component';
 import { RightRecognitionComponent } from './right-recognition/right-recognition.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { RightRecognitionComponent } from './right-recognition/right-recognition
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

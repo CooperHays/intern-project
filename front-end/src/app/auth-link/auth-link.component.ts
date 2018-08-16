@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-auth-link',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-link.component.less']
 })
 export class AuthLinkComponent implements OnInit {
-  user = "Michael Cooper";
+  user = 'Michael Cooper';
 
-  logout = "Logout";
-  
+  logout = 'Logout';
+
+  faCog = faCog;
+
   constructor() { }
 
   ngOnInit() {

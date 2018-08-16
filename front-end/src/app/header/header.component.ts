@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   title = '';
 
-  constructor(private ar: ActivatedRoute, router: Router, location: Location) { }
+  constructor(private router: Router, location: Location) { }
 
   ngOnInit() {
     const currentUrl = location.pathname.slice(1);

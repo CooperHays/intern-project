@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-recognition.component.less']
 })
 export class LeftRecognitionComponent implements OnInit {
-  left = 'Left Div Here';
+  user = 'Michael Cooper';
 
   constructor() { }
 

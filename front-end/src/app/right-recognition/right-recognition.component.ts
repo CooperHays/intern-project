@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./right-recognition.component.less']
 })
 export class RightRecognitionComponent implements OnInit {
-  right = 'Right Div Here';
 
   constructor() { }
 

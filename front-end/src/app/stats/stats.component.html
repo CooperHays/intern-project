@@ -2,7 +2,12 @@
 
   <div class="time-period">
     <h4>Time Frame: </h4>
-    <select name="" id="">
+    <select 
+      name="Time-Period" 
+      id="time-period-select" 
+      (change)="filterStat($event.target.value)"
+    >
+      <!-- <option value="" disabled>choose a time frame</option> -->
       <option *ngFor="let timePeriod of timePeriods" [value]="timePeriod">{{timePeriod}}</option>
     </select>
   </div>
@@ -12,8 +17,8 @@
       <h5>Request Distribution</h5>
       <br>
       <p>Calls Received: {{displayedStats.callsReceived}}</p>
-      <p>Chats Received: {{today.chatsReceived}}</p>
-      <p>Emails Received: {{today.emailsReceived}}</p>
+      <p>Chats Received: {{displayedStats.chatsReceived}}</p>
+      <p>Emails Received: {{displayedStats.emailsReceived}}</p>
     </div>
   </div>
 
@@ -21,8 +26,8 @@
     <div class="card-container">
       <h5>Email Ticket Completion</h5>
       <br>
-      <p>Email Tickets Received: {{today.emailsReceived}}</p>
-      <p>Email Tickets Solved: {{today.emailsSolved}}</p>
+      <p>Email Tickets Received: {{displayedStats.emailsReceived}}</p>
+      <p>Email Tickets Solved: {{displayedStats.emailsSolved}}</p>
     </div>  
   </div>
 

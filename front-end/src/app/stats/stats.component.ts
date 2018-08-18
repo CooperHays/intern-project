@@ -14,25 +14,29 @@ export class StatsComponent implements OnInit {
   stats = STATS;
 
   displayedStats: Stat;
+  timePeriod: String;
 
-  today = {
-    callsReceived:350,
-    chatsReceived:162,
-    emailsReceived: 243,
-    emailsSolved: 255,
-    callDistribution: 46,
-    chatDistribution: 21,
-    emailDistribution: 32,
-    emailsSolvedPercentage: 105
-  };
+  // today = {
+  //   callsReceived:350,
+  //   chatsReceived:162,
+  //   emailsReceived: 243,
+  //   emailsSolved: 255,
+  //   callDistribution: 46,
+  //   chatDistribution: 21,
+  //   emailDistribution: 32,
+  //   emailsSolvedPercentage: 105
+  // };
 
   constructor() { }
 
   ngOnInit() {
+    this.timePeriod = "Today";
+    this.displayedStats = this.stats[this.stats.findIndex(statObj => statObj["timePeriod"] === this.timePeriod)];
   }
 
-  onSelect(stat: Stat): void {
-    this.displayedStats = stat;
+  filterStat(timePeriod: String): void {
+    this.displayedStats = this.stats[this.stats.findIndex(statObj => statObj["timePeriod"] === timePeriod)];
+    console.log(this.displayedStats);
   }
 
 }

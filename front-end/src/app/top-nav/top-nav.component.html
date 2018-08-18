@@ -1,3 +1,6 @@
 <div class="top-nav-container">
-  Logged in as: {{username}}
+  <a routerLink='/dashboard'>
+    <fa-icon class="home" [icon]='faHome'></fa-icon>
+  </a>
+  Logged in as: <span class='username'>{{username}}</span>
 </div>

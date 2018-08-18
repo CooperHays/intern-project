@@ -11,6 +11,10 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { StatsComponent } from './stats/stats.component';
 import { RecognitionComponent } from './recognition/recognition.component';
+import { LeftRecognitionComponent } from './left-recognition/left-recognition.component';
+import { RightRecognitionComponent } from './right-recognition/right-recognition.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,11 +26,14 @@ import { RecognitionComponent } from './recognition/recognition.component';
     HeaderComponent,
     MainContentComponent,
     StatsComponent,
-    RecognitionComponent
+    RecognitionComponent,
+    LeftRecognitionComponent,
+    RightRecognitionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

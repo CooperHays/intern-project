@@ -3,6 +3,7 @@
     transition: 0.3s;
     border-radius: 5px;
     background: #ffffff;
+    margin: 15px 0px;
     
     .card-container {
         padding: 20px 20px;
@@ -18,9 +19,21 @@
 
 .right-container {
     margin: 5px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: auto;
 }
 
 .header {
     display: flex;
     justify-content: center;
+}
+
+.card-outer-container {
+    overflow-y: auto;
+}
+
+.body {
+    font-weight: bold;
 }

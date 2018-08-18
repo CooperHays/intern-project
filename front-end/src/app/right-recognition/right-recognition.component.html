@@ -4,13 +4,13 @@
     </div>
     <br>
     <div class="card-outer-container">
-        <div class="card-recognition">
+        <div *ngFor="let prop of props" class="card-recognition">
             <div class="card-container">
-                    <p>"Cooper is an inspiration to all! The time he has spent learning from Brett is obviously paying off!!"</p>
+                    <p class='body'>{{prop.body}}</p>
                     <br>
                     <p class='recognition'>
-                        <span class='left'>Posted by: Courtney Park</span>
-                        <span class='right'>Date: 08/18/18</span>
+                        <span class='left'>Posted by: {{prop.giver}}</span>
+                        <span class='right'>Date: {{prop.date}}</span>
                     </p>
             </div>
         </div>

@@ -8,9 +8,8 @@ import { User } from '../user';
 })
 export class RecognitionComponent implements OnInit {
   user: User = {
-    firstName: 'Michael',
-    lastName: 'Cooper'
-  }
+    name: 'Michael Cooper'
+  };
 
   constructor() { }
 

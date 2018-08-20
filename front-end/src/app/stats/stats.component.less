@@ -1,4 +1,6 @@
-.stats-container {
+
+
+.card-outer-container {
     width: calc(100vw - 180px);
     height: calc(100vh - 110px);
     margin: 0 5%;
@@ -6,6 +8,23 @@
     flex-direction: column;
     justify-content: space-evenly;
     // align-content: center;
+
+    .time-period {
+        display: flex;        
+        justify-content: flex-start;
+        width: 30vw;
+        margin: 0;
+    
+        h4, select {
+            height: 36px;
+            padding: 5px 20px 5px 0;
+        }
+    
+        h4 {
+            color: #353535;
+        }
+        
+    }
 
     .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -19,23 +38,6 @@
                 color: #353535;
             }
         }
-    }
-
-    .time-period {
-        display: flex;
-        // width: 40vw;        
-        justify-content: flex-start;
-
-        h4, select {
-            // width: 300px;
-            height: 36px;
-            padding: 5px 20px 5px 0;
-        }
-
-        h4 {
-            color: #353535;
-        }
-        
     }
 
     .distribution, .email-completion {

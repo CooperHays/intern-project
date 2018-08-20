@@ -1,16 +1,18 @@
-  <div class="row time-period">
-    <h4>Time Frame: </h4>
-    <select 
-      name="Time-Period" 
-      id="time-period-select" 
-      (change)="filterStat($event.target.value)"
-    >
-      <!-- <option value="" disabled>choose a time frame</option> -->
-      <option *ngFor="let timePeriod of timePeriods" [value]="timePeriod">{{timePeriod}}</option>
-    </select>
-  </div>
+  
 
 <div class="card-outer-container">
+    <div class="row time-period">
+      <h4>Time Frame: </h4>
+      <select 
+        name="Time-Period" 
+        id="time-period-select" 
+        (change)="filterStat($event.target.value)"
+      >
+        <!-- <option value="" disabled>choose a time frame</option> -->
+        <option *ngFor="let timePeriod of timePeriods" [value]="timePeriod">{{timePeriod}}</option>
+      </select>
+    </div>
+
   <div class="card distribution">
     <div class="card-container">
       <h5>Request Distribution</h5>

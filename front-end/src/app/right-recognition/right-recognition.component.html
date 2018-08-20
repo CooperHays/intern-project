@@ -1,16 +1,16 @@
 <div class="right-container">
     <div class='header'>
-        <h4>Your Recognition Feed</h4>
+        <h4>{{ giver }}'s Recognition Feed</h4>
     </div>
     <br>
     <div class="card-outer-container">
-        <div *ngFor="let prop of props" class="card-recognition">
+        <div *ngFor="let message of messageService.recognition" class="card-recognition">
             <div class="card-container">
-                    <p class='body'>{{prop.body}}</p>
+                    <p class='body'>"{{message.body}}"</p>
                     <br>
                     <p class='recognition'>
-                        <span class='left'>Posted by: {{prop.giver}}</span>
-                        <span class='right'>Date: {{prop.date}}</span>
+                        <span class='left'>Posted by: {{message.giver}}</span>
+                        <span class='right'>{{message.date | date: 'medium'}}</span>
                     </p>
             </div>
         </div>

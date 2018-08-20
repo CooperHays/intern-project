@@ -1,13 +1,14 @@
 <div>User:<span>{{ user.name}}</span></div>
-<div>Support Rep: 
+<div>Support Rep:
     <span>
-    <select name="" id="" class='users'>
+    <select name="" id="" class='users' (change)='setReceiver($event.target.value)'>
         <option *ngFor="let user of users" value={{user.name}}>{{user.name}}</option>
     </select>
     </span>
 </div>
-<textarea name="" id="" cols="52" rows="10" placeholder='Add Recognition Here'></textarea>
+<textarea name="" id="" cols="52" rows="10" placeholder='Add Recognition Here' (input)='setBody($event.target.value)' [(ngModel)] = 'body'></textarea>
 <div class="button-right">
-    <button class='btn btn-submit' type="submit">Submit</button>
-    <button class='btn btn-cancel' type="reset">Cancel</button>
+    <button class='btn btn-submit' type="submit" (click)='setRecognition()'>Submit</button>
+    <button class='btn btn-cancel' type="reset" (click)='setCancel()'>Cancel</button>
 </div>
+

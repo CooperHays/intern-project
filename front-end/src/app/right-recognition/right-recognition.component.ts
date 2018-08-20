@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Recognition } from '../mock-recognition';
+import { Props } from '../mock-props';
 
 @Component({
   selector: 'app-right-recognition',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./right-recognition.component.less']
 })
 export class RightRecognitionComponent implements OnInit {
-  right = 'Right Div Here';
-
+  props = Props;
+  
   constructor() { }
 
   ngOnInit() {

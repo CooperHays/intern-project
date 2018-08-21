@@ -1,34 +1,36 @@
+<div class="stats-container">
+  <div class="time-period">
+    <h4>Time Frame: </h4>
+    <select 
+      name="Time-Period" 
+      id="time-period-select" 
+      (change)="filterStat($event.target.value)"
+    >
+      <!-- <option value="" disabled>choose a time frame</option> -->
+      <option *ngFor="let timePeriod of timePeriods" [value]="timePeriod">{{timePeriod}}</option>
+    </select>
+  </div>
+
+  <div class="card-outer-container">     
+    <div class="card distribution">
+      <div class="card-container">
+        <h5>Request Distribution</h5>
+        <br>
+        <p>Calls Received: {{displayedStats.callsReceived}}</p>
+        <p>Chats Received: {{displayedStats.chatsReceived}}</p>
+        <p>Emails Received: {{displayedStats.emailsReceived}}</p>
+      </div>
+      <img class="img-fluid request-distribution" src="../../assets/meta-chart.jpeg" alt="distribution">
+    </div>
   
-
-<div class="card-outer-container">
-    <div class="row time-period">
-      <h4>Time Frame: </h4>
-      <select 
-        name="Time-Period" 
-        id="time-period-select" 
-        (change)="filterStat($event.target.value)"
-      >
-        <!-- <option value="" disabled>choose a time frame</option> -->
-        <option *ngFor="let timePeriod of timePeriods" [value]="timePeriod">{{timePeriod}}</option>
-      </select>
-    </div>
-
-  <div class="card distribution">
-    <div class="card-container">
-      <h5>Request Distribution</h5>
-      <br>
-      <p>Calls Received: {{displayedStats.callsReceived}}</p>
-      <p>Chats Received: {{displayedStats.chatsReceived}}</p>
-      <p>Emails Received: {{displayedStats.emailsReceived}}</p>
+    <div class="card email-completion">
+      <div class="card-container">
+        <h5>Email Ticket Completion</h5>
+        <br>
+        <p>Email Tickets Received: {{displayedStats.emailsReceived}}</p>
+        <p>Email Tickets Solved: {{displayedStats.emailsSolved}}</p>
+      </div>
+      <img class="img-fluid email-solved" src="../../assets/Capture.JPG" alt="emails solved">  
     </div>
   </div>
-
-  <div class="card email-completion">
-    <div class="card-container">
-      <h5>Email Ticket Completion</h5>
-      <br>
-      <p>Email Tickets Received: {{displayedStats.emailsReceived}}</p>
-      <p>Email Tickets Solved: {{displayedStats.emailsSolved}}</p>
-    </div>  
-  </div>
-</div>
+</div>  

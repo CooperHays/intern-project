@@ -10,7 +10,7 @@ import { User } from '../user';
 export class AuthLinkComponent implements OnInit {
   user: User = {
     name: 'Michael Cooper'
-  }
+  };
 
   logout = 'Logout';
 

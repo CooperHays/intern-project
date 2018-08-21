@@ -1,0 +1,10 @@
+<div class="auth-container">
+  <div>Select User:
+    <span>
+      <select name="" id="" class='users' (change)='setUser($event.target.value)'>
+        <option value="Select User">Select User</option>
+        <option *ngFor="let user of users" value={{user.name}}>{{user.name}}</option>
+      </select>
+    </span>
+  </div>
+</div>

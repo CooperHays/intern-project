@@ -16,6 +16,7 @@ import { LeftRecognitionComponent } from './left-recognition/left-recognition.co
 import { RightRecognitionComponent } from './right-recognition/right-recognition.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     StatsComponent,
     RecognitionComponent,
     LeftRecognitionComponent,
-    RightRecognitionComponent
+    RightRecognitionComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

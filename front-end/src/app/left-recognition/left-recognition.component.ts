@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { map, filter } from 'rxjs/operators';
 
+import { UsersService } from '../users.service';
 import { User } from '../user';
-import { Users } from '../users';
 import { Recognition } from '../mock-recognition';
 import { MessageService } from '../message.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-left-recognition',
@@ -12,26 +13,28 @@ import { MessageService } from '../message.service';
   styleUrls: ['./left-recognition.component.less']
 })
 export class LeftRecognitionComponent implements OnInit {
-  user: User = {
-    name: 'Michael Cooper'
-  };
+  user = this.userService.user;
 
-  users = Users.filter(user => user.name !== this.user.name).sort((a, b) => a.name.localeCompare(b.name));
+  users: User[];
+
+  filteredUsers = [];
 
   body = '';
 
   receiver = '';
 
-  giver = this.user.name;
+  giver = this.user[0];
 
   date: number;
 
   message = {};
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private userService: UserService, private usersService: UsersService) { }
 
   ngOnInit() {
-    console.log(this.giver);
+    console.log(this.messageService.recognition);
+    this.getUsers();
+    this.filteredUsers = this.users.filter(user => user.name !== this.user[0]).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   setReceiver(receiver: string): void {
@@ -54,6 +57,7 @@ export class LeftRecognitionComponent implements OnInit {
     console.log(this.message);
     this.messageService.add(this.message);
     console.log(this.messageService.recognition);
+    this.body = null;
     // this.date = Date.now();
     // console.log('this is the timestamp: ', this.date);
     // console.log('i work!');
@@ -63,6 +67,10 @@ export class LeftRecognitionComponent implements OnInit {
   setCancel(cancel: string): void {
     this.body = null;
     console.log('i work');
+  }
+
+  getUsers(): void {
+    this.users = this.usersService.getUsers();
   }
 
 }

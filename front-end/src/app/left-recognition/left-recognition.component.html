@@ -1,9 +1,9 @@
-<div>User:<span>{{ user.name}}</span></div>
+<div>User:<span>{{ user }}</span></div>
 <div>Support Rep:
     <span>
     <select name="" id="" class='users' (change)='setReceiver($event.target.value)'>
       <option value="Select Rep">Select Support Rep</option>
-      <option *ngFor="let user of users" value={{user.name}}>{{user.name}}</option>
+      <option *ngFor="let user of filteredUsers" value={{user.name}}>{{user.name}}</option>
     </select>
     </span>
 </div>

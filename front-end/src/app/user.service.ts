@@ -4,9 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  user: string[];
+  user = [];
 
   add(user: string) {
+    this.remove();
     this.user.push(user);
   }
 

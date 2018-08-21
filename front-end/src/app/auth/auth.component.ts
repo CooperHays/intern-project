@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService} from '../users.service';
+import { UserService } from '../user.service';
 import { User } from '../user';
 
 @Component({
@@ -10,7 +11,7 @@ import { User } from '../user';
 export class AuthComponent implements OnInit {
   users: User[];
 
-  constructor(public usersService: UsersService) { }
+  constructor(public usersService: UsersService, public userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
@@ -19,6 +20,11 @@ export class AuthComponent implements OnInit {
 
   getUsers(): void {
     this.users = this.usersService.getUsers();
+  }
+
+  setUser(user: string): void {
+    this.userService.add(user);
+    console.log(this.userService.user);
   }
 
 }

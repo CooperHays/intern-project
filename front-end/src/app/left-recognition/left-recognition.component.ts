@@ -32,19 +32,20 @@ export class LeftRecognitionComponent implements OnInit {
   constructor(private messageService: MessageService, private userService: UserService, private usersService: UsersService) { }
 
   ngOnInit() {
-    console.log(this.messageService.recognition);
+    // console.log(this.messageService.recognition);
+    // console.log('current user is: ', this.user);
     this.getUsers();
     this.filteredUsers = this.users.filter(user => user.name !== this.user[0]).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   setReceiver(receiver: string): void {
     this.receiver = receiver;
-    console.log(this.receiver);
+    // console.log(this.receiver);
   }
 
   setBody(body: string): void {
     this.body = body;
-    console.log(this.body);
+    // console.log(this.body);
   }
 
   setRecognition(message: any): void {
@@ -66,11 +67,12 @@ export class LeftRecognitionComponent implements OnInit {
 
   setCancel(cancel: string): void {
     this.body = null;
-    console.log('i work');
+    // console.log('i work');
   }
 
   getUsers(): void {
-    this.users = this.usersService.getUsers();
+    this.usersService.getUsers()
+      .subscribe(users => this.users = users);
   }
 
 }

@@ -5,9 +5,9 @@
 
   </div>
 
-  <div class='logout' (click)='setLogout()' *ngIf='loggedIn; else loggedOut'>{{ logout }}</div>
+  <div class='auth' (click)='setLogout()' *ngIf='loggedIn; else loggedOut'><a routerLink='/'>{{ logout }}</a></div>
   <ng-template #loggedOut>
-    <div class="login">
-      <a routerLink='/login'>Login</a>
+    <div class="auth">
+      <a routerLink='/login'>{{ login }}</a>
     </div>
   </ng-template>

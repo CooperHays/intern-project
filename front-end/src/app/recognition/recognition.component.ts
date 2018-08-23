@@ -7,9 +7,6 @@ import { User } from '../user';
   styleUrls: ['./recognition.component.less']
 })
 export class RecognitionComponent implements OnInit {
-  user: User = {
-    name: 'Michael Cooper'
-  };
 
   constructor() { }
 

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { map, filter } from 'rxjs/operators';
 
+import { UsersService } from '../users.service';
 import { User } from '../user';
-import { Users } from '../users';
 import { Recognition } from '../mock-recognition';
 import { MessageService } from '../message.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-left-recognition',
@@ -12,36 +13,39 @@ import { MessageService } from '../message.service';
   styleUrls: ['./left-recognition.component.less']
 })
 export class LeftRecognitionComponent implements OnInit {
-  user: User = {
-    name: 'Michael Cooper'
-  };
+  user = this.userService.user;
 
-  users = Users.filter(user => user.name !== this.user.name).sort((a, b) => a.name.localeCompare(b.name));
+  users: User[];
+
+  filteredUsers = [];
 
   body = '';
 
   receiver = '';
 
-  giver = this.user.name;
+  giver = this.user[0];
 
   date: number;
 
   message = {};
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private userService: UserService, private usersService: UsersService) { }
 
   ngOnInit() {
-    console.log(this.giver);
+    // console.log(this.messageService.recognition);
+    // console.log('current user is: ', this.user);
+    this.getUsers();
+    this.filteredUsers = this.users.filter(user => user.name !== this.user[0]).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   setReceiver(receiver: string): void {
     this.receiver = receiver;
-    console.log(this.receiver);
+    // console.log(this.receiver);
   }
 
   setBody(body: string): void {
     this.body = body;
-    console.log(this.body);
+    // console.log(this.body);
   }
 
   setRecognition(message: any): void {
@@ -51,9 +55,10 @@ export class LeftRecognitionComponent implements OnInit {
       receiver: this.receiver,
       date: Date.now()
     };
-    console.log(this.message);
+    // console.log(this.message);
     this.messageService.add(this.message);
-    console.log(this.messageService.recognition);
+    // console.log(this.messageService.recognition);
+    this.body = null;
     // this.date = Date.now();
     // console.log('this is the timestamp: ', this.date);
     // console.log('i work!');
@@ -62,7 +67,12 @@ export class LeftRecognitionComponent implements OnInit {
 
   setCancel(cancel: string): void {
     this.body = null;
-    console.log('i work');
+    // console.log('i work');
+  }
+
+  getUsers(): void {
+    this.usersService.getUsers()
+      .subscribe(users => this.users = users);
   }
 
 }

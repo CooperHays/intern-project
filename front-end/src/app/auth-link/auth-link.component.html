@@ -1,8 +1,13 @@
 <div>
     {{ user }}
 
-    <fa-icon class="gear" [icon]='faCog'></fa-icon>
+    <fa-icon class="gear" [icon]='faCog' *ngIf='loggedIn'></fa-icon>
 
   </div>
 
-  <div>{{ logout }}</div>
+  <div class='logout' (click)='setLogout()' *ngIf='loggedIn; else loggedOut'>{{ logout }}</div>
+  <ng-template #loggedOut>
+    <div class="login">
+      <a routerLink='/login'>Login</a>
+    </div>
+  </ng-template>

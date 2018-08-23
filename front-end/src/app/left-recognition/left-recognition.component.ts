@@ -54,9 +54,9 @@ export class LeftRecognitionComponent implements OnInit {
       receiver: this.receiver,
       date: Date.now()
     };
-    console.log(this.message);
+    // console.log(this.message);
     this.messageService.add(this.message);
-    console.log(this.messageService.recognition);
+    // console.log(this.messageService.recognition);
     this.body = null;
     // this.date = Date.now();
     // console.log('this is the timestamp: ', this.date);

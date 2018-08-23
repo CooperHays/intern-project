@@ -16,17 +16,30 @@ export class AuthLinkComponent implements OnInit, DoCheck {
 
   faCog = faCog;
 
+  loggedIn = this.userService.loggedIn;
+
   constructor(public userService: UserService) { }
 
   ngOnInit() {
-    this.user = this.userService.user[0];
+    // this.user = this.userService.user[0];
     console.log(this.user);
+    console.log('this.loggedIn is: ', this.loggedIn);
   }
 
   ngDoCheck() {
     if (this.user !== this.userService.user[0]) {
       this.user = this.userService.user[0];
+      this.loggedIn = this.userService.loggedIn;
+      console.log('this.loggedIn is: ', this.loggedIn);
     }
   }
 
+  setLogout() {
+    this.userService.remove();
+    this.user = this.userService.user[0];
+    this.loggedIn = this.userService.loggedIn;
+    console.log('logout user good:', this.user);
+    console.log('this.loggedIn is: ', this.loggedIn);
+    console.log('this.userService.loggedIn is: ', this.userService.loggedIn);
+  }
 }

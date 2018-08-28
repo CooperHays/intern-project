@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stat } from '../stat';
 import { STATS } from '../mock-stats';
+import { StatService } from '../stat.service';
 
 @Component({
   selector: 'app-stats',
@@ -10,33 +11,26 @@ import { STATS } from '../mock-stats';
 export class StatsComponent implements OnInit {
 
   timePeriods = ['Today', 'This Week', 'This Month'];
-
-  stats = STATS;
-
-  displayedStats: Stat;
+  stats: Stat;
   timePeriod: String;
 
-  // today = {
-  //   callsReceived:350,
-  //   chatsReceived:162,
-  //   emailsReceived: 243,
-  //   emailsSolved: 255,
-  //   callDistribution: 46,
-  //   chatDistribution: 21,
-  //   emailDistribution: 32,
-  //   emailsSolvedPercentage: 105
-  // };
-
-  constructor() { }
+  constructor(public StatService: StatService) { }
 
   ngOnInit() {
     this.timePeriod = "Today";
-    this.displayedStats = this.stats[this.stats.findIndex(statObj => statObj["timePeriod"] === this.timePeriod)];
+    this.getStats(this.timePeriod);
+    // this.displayedStats = this.stats[this.stats.findIndex(statObj => statObj["timePeriod"] === this.timePeriod)];
   }
 
   filterStat(timePeriod: String): void {
-    this.displayedStats = this.stats[this.stats.findIndex(statObj => statObj["timePeriod"] === timePeriod)];
-    console.log(this.displayedStats);
+    // this.displayedStats = this.stats[this.stats.findIndex(statObj => statObj["timePeriod"] === timePeriod)];
+  }
+
+  getStats(timePeriod: String): void {
+    this.StatService.getStats(timePeriod)
+      .subscribe(stats => this.stats = stats[stats.findIndex(statObj => statObj["timePeriod"] === timePeriod)]);
+      console.log(this.stats);
+      console.log(this.timePeriod);
   }
 
 }

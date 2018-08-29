@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'A Front End For Our Projects';
+  title = 'Support Dashboard';
 }

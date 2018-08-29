@@ -10,7 +10,13 @@ export const STATS: Stat[] = [
         callDistribution: 46,
         chatDistribution: 21,
         emailDistribution: 32,
-        emailsSolvedPercentage: 105
+        emailsSolvedPercentage: 105,
+        dailyAverageWait: 26,
+        monthlyAverageWait: 31,
+        quarterlyAverageWait: 40,
+        monthlyCaliforniaEmailsReceived: 395,
+        totalSupportRequests: 755,
+        averageTotalSupportRequests: 755
     },
     {
         timePeriod: 'This Week',
@@ -21,7 +27,13 @@ export const STATS: Stat[] = [
         callDistribution: 46,
         chatDistribution: 21,
         emailDistribution: 32,
-        emailsSolvedPercentage: 105
+        emailsSolvedPercentage: 105,
+        dailyAverageWait: 26,
+        monthlyAverageWait: 31,
+        quarterlyAverageWait: 40,
+        monthlyCaliforniaEmailsReceived: 395,
+        totalSupportRequests: 3775,
+        averageTotalSupportRequests: 755
     },
     {
         timePeriod: 'This Month',
@@ -32,6 +44,12 @@ export const STATS: Stat[] = [
         callDistribution: 46,
         chatDistribution: 21,
         emailDistribution: 32,
-        emailsSolvedPercentage: 105
+        emailsSolvedPercentage: 105,
+        dailyAverageWait: 26,
+        monthlyAverageWait: 31,
+        quarterlyAverageWait: 40,
+        monthlyCaliforniaEmailsReceived: 395,
+        totalSupportRequests: 15100,
+        averageTotalSupportRequests: 755
     }
 ]
